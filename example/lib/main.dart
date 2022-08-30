@@ -37,8 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: FacebookVideoPlayer(
-          urlFb: 'https://www.facebook.com/Mnewsvn/videos/783759156289552',
+        child: TiktokVideoPlayer(
+          url: 'https://www.tiktok.com/embed/v2/7115392730636766490',
         ),
       ),
     );
