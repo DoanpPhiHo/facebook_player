@@ -38,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: const Center(
         child: TiktokVideoPlayer(
-          url: 'https://www.tiktok.com/embed/v2/7115392730636766490',
+          url:
+              'https://www.tiktok.com/@vietphuongthoa98/video/7115392730636766490?is_from_webapp=1',
         ),
       ),
     );

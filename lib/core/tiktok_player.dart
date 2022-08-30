@@ -13,6 +13,21 @@ class TiktokVideoPlayer extends StatefulWidget {
 }
 
 class _TiktokVideoPlayerState extends State<TiktokVideoPlayer> {
+  late String urlFormat;
+  @override
+  void initState() {
+    final regix = RegExp(r'((?:video\/)\d+)');
+    final id = regix
+        .stringMatch(
+          widget.url,
+        )
+        .toString()
+        .replaceAll('video/', '');
+    urlFormat = 'https://www.tiktok.com/embed/v2/$id';
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -33,7 +48,7 @@ class _TiktokVideoPlayerState extends State<TiktokVideoPlayer> {
           ),
         ),
         initialUrlRequest: URLRequest(
-          url: Uri.parse(widget.url),
+          url: Uri.parse(urlFormat),
         ),
         onConsoleMessage: (controller, consoleMessage) {
           log(consoleMessage.message);
